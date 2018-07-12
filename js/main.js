@@ -63,20 +63,6 @@ function StopReadingFrames() {
 }
 
 
-// function nextFrame(){
-//     progress.value++;
-//     // var context = clock(last_time += 1000);
-//     video.add(context);
-//     if(progress.value / progress.max < 1){
-//         requestAnimationFrame(nextFrame);
-//         document.getElementById('status').innerHTML = "Drawing Frames";
-//     }else{
-//         document.getElementById('status').innerHTML = "Compiling Video";
-//         requestAnimationFrame(finalizeVideo); // well, should probably use settimeout instead
-//     }
-
-// }
-
 
 function finalizeVideo() {
     var start_time = +new Date;
@@ -104,13 +90,3 @@ function finalizeVideo() {
 
 
 
-    // //stolen wholesale off mozilla's wiki
-    // function clock(time){
-    //     var now = new Date();
-    //     now.setTime(time);
-    //     var ctx = document.getElementById('canvas').getContext('2d');
-    //     ctx.save();
-
-    //     return ctx;
-    // }
-    // // the actual demo code, yaaay
