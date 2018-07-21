@@ -1,0 +1,18 @@
+.video {
+    width: 400px;
+    height: 320px;
+    background: brown;
+}
+
+
+* {
+    font-family: sans-serif;
+}
+
+#VideoSender{
+display: none;
+}
+
+#VideoReceiver{
+display: none;
+}

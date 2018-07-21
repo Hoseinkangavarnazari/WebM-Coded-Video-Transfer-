@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>WebRTC Reading Data Audio Video</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.webrtc-experiment.com/DataChannel.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style/receiverStyle.css" />
+
+
+</head>
+
+<body>
+
+    <h1>Receiver Video</h1>
+    <input id="receiver_listener" placeholder="Put the channel number">
+    <button onclick="setChannel()" id="channelConfirm">Set Channel</button>
+    <p style="font-size: 14px;">Please just enter numbers here </p>
+    <br>
+    
+    <br>
+    <br>
+    <br>
+
+    <video id="awesome" width="300" height="225" controls autoplay loop></video>
+
+    <div class="video">
+
+    </div>
+</body>
+<script src="./js/receiver.js"></script>
+</html>

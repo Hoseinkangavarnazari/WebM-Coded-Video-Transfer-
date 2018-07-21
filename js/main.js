@@ -13,6 +13,8 @@ var width = 320;
 var height = 225;
 var timesUp = false;
 var timesUpBackup = false;
+var longInt8View;
+var g_blob;
 
 
 navigator.getUserMedia(
@@ -21,10 +23,10 @@ navigator.getUserMedia(
         localStream = stream;
         $('.local video').attr('src', URL.createObjectURL(stream));
         drawToCanvas();
-        init();
+        // init();
     },
     error => {
-        alert('error while accessing usermedia ' + error.toString());
+        alert('error while accessing usermedia' + error.toString());
     }
 );
 
@@ -61,9 +63,7 @@ function StopReadingFrames() {
     console.log("timesUp works");
     timesUp = true;
 }
-
-
-
+var reader = new FileReader();
 function finalizeVideo() {
     var start_time = +new Date;
     video.compile(false, function (output) {
@@ -71,11 +71,10 @@ function finalizeVideo() {
         var end_time = +new Date;
         var url = webkitURL.createObjectURL(output);
 
-        var reader = new FileReader();
+        // var reader = new FileReader();
         reader.readAsArrayBuffer(output);
 
-        console.log(reader);
-
+        g_blob = output;
 
         console.log(url);
         document.getElementById('awesome').src = url; //toString converts it to a URL via Object URLs, falling back to DataURL
@@ -84,9 +83,6 @@ function finalizeVideo() {
         document.getElementById('status').innerHTML = "Compiled Video in " + (end_time - start_time) + "ms, file size: " + Math.ceil(output.size / 1024) + "KB";
     });
 }
-
-
-
 
 
 
